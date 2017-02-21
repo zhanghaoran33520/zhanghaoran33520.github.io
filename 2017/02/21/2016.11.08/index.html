@@ -1,0 +1,420 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="John Doe">
+  
+  
+  
+  
+    <meta name="description" content="#学习时遇到的问题：
+scanf(&quot;%d&quot;, &amp;row); 
+scanf(&quot;%d&quot;, &amp;column);
+结果：可以正常输入两个数。
+
+scanf(&quot;%d\n&quot;, &amp;row); 
+scanf(&quot;%d\n&quot;, &amp;column);
+结果：会导致输入三个数，前两个数字有效，第三个数字无任...">
+  
+  <title> [ Hexo ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2017/02/21/hello-world/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Hello World
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg"/>
+          <div id="homelink">Hexo</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>空标题</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-02-21</span>
+      
+        <span id = "post-title-updated">修改于 2016-11-09</span>
+      
+      
+      
+    </p>
+    
+    <p>#学习时遇到的问题：</p>
+<pre><code>scanf(&quot;%d&quot;, &amp;row); 
+scanf(&quot;%d&quot;, &amp;column);
+结果：可以正常输入两个数。
+
+scanf(&quot;%d\n&quot;, &amp;row); 
+scanf(&quot;%d\n&quot;, &amp;column);
+结果：会导致输入三个数，前两个数字有效，第三个数字无任何影响。
+
+网上找到的解答：
+scanf允许任何除\0以外的格式控制字符，但这与他的三个分割符又冲突(\n,\t,空格)。
+所以尽量不要在格式控制参数里出现这三个字符。
+当你scanf(&quot;%s\n&quot;)，输入kkk回车时scanf接收第一个字符串将得到kkk，但是scanf又发现你让他再等待一个\n他就继续等你的输入。
+当你又按了一个回车，scanf发现上一个分割符跟这个分割符中间没有内容，直接跳过。
+到你再输入内容然后回车时，scanf发现下一个字符不是\n，认为是非法输入。于是下面的内容将留在缓冲区，函数返回。 
+</code></pre><p>#回顾学习内容：</p>
+<p>##快捷键：F10，单步执行。</p>
+<p>##C语言学习：</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;  //system(&quot;PAUSE&quot;);的头文件
+</code></pre><p>##输出一个数的2倍<br>    /<em>int main()<br>    {<br>        printf(“please input a number:\n”);<br>        int num;<br>        scanf(“%d”, &amp;num);<br>        printf(“It’s 2 times as much as %d\n”,num</em>2);</p>
+<pre><code>    system(&quot;PAUSE&quot;);//暂停（在DeBug中打开exe文件不会再一闪而过。）注：在VS中，Ctrl+F5会自动添加暂停。
+    return 0;
+}*/
+</code></pre><p>##输出一个数的三分之一<br>    /*int main()<br>    {<br>        //变量<br>        //常量</p>
+<pre><code>    //初始化
+    //int x = 5;
+    //int y = 10;
+
+    //赋值
+    //变量名 = 表达式
+
+    //表达式：  常量   变量   混合运算
+
+    //y = (5 + 10) * 2 / 3;
+
+    //除法 浮点类型float
+    printf(&quot;please input a number:\n&quot;);
+    float num;
+
+    scanf(&quot;%f&quot;, &amp;num);
+    printf(&quot;1/3 of the %f is %f\n&quot;,num, num / 3.0);
+
+    //printf(&quot;%d %d\n&quot;, x, y);
+    return 0;
+}*/
+</code></pre><p>##循环10次<br>    /*int main()<br>    {<br>        //for(初始化；   执行条件；   循环每次结束时执行)</p>
+<pre><code>    for (int i = 1; i &lt;= 10; i++)// i = i + 1
+    {//循环体
+        printf(&quot;%d&quot;, i);
+        printf(&quot;重要的话说好多遍！\n&quot;);
+    }
+
+    return 0;
+}*/
+</code></pre><p>##死循环<br>    /*int main()<br>    {<br>        int j = 0;<br>        int sum = 0;<br>        for (int i = 1; i &gt; -100; i++)<br>        {<br>            sum = sum + i;<br>            //printf(“%d\n %d\n”, i,sum);<br>            j = i;<br>        }</p>
+<pre><code>    printf(&quot;\nThe SUM is %d.\n\n %d\n&quot;, sum, j);
+    return 0;
+}*/
+</code></pre><p>##输入一个数，计算从1到该数的和。<br>    /*int main()<br>    {<br>        int sum = 0;<br>        int num = 0;//初始化是一个好的习惯<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            sum = sum + i;<br>            printf(“%d\n %d\n”, i, sum);<br>        }</p>
+<pre><code>    printf(&quot;\nThe SUM is %d.\n\n&quot;, sum);
+    return 0;
+}*/
+</code></pre><p>##练习：从键盘输入一个数，输入从1到这个数中间所有整数的平方值。<br>    /<em>int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            printf(“The square of %d is %d.\n”, i, i</em>i);<br>        }</p>
+<pre><code>    return 0;
+}*/
+</code></pre><p>##判断<br>    /<em>int main()<br>    {<br>        int age = 0;<br>        printf(“Please input your age:”);<br>        scanf(“%d”, &amp;age);<br>        if (age &gt;= 22)<br>            printf(“You can get married.\n”);  //不加{}只能控制后面一句。<br>        else<br>        {                                      //加{}可以控制多句。<br>            printf(“You can’t get married.\n”);<br>        }<br>        return 0;<br>    }</em>/</p>
+<p>##循环嵌套判断<br>    /<em>int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            if (i % 3 == 0)<br>                printf(“%d can be divisible by 3.\n”, i);<br>            //else<br>            //{<br>            //    printf(“%d can not be divisible by 3.\n”, i);<br>        //    }<br>        }<br>    }</em>/</p>
+<p>##长方形<br>    /<em>int main()<br>    {<br>        int row = 0;<br>        int column = 0;<br>        printf(“Please input the row number:”);<br>        scanf(“%d”, &amp;row);<br>        printf(“Please input the column nunber:”);<br>        scanf(“%d”, &amp;column);<br>            for (int i = 1; i &lt;= row; i++)<br>            {<br>                for (int j = 1; j &lt;= column; j++)<br>                    printf(“</em>“);<br>                printf(“\n”);<br>            }<br>        return 0;<br>    }*/</p>
+<p>##正三角<br>    /<em>int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            for (int j = 1; j &lt;= i; j++)<br>            {<br>                printf(“</em>“);<br>            }<br>            printf(“\n”);<br>        }<br>        return 0;<br>    }*/</p>
+<p>#作业：</p>
+<p>##倒三角<br>    int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            for (int j = i; j &lt;= num; j++)<br>            {<br>                printf(“*”);<br>            }<br>            printf(“\n”);<br>        }<br>        return 0;<br>    }</p>
+<p>##正三角的反三角（1）<br>    int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            for (int k = num - i; k &gt; 0; k–)<br>                printf(“ “);<br>            for (int j = 1; j &lt;= i; j++)<br>            {<br>                printf(“*”);<br>            }<br>            printf(“\n”);<br>        }<br>        return 0;<br>    }</p>
+<p>##正三角的反三角（2）<br>    /<em>int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            for (int k = i; k &lt;= num - 1; k++)<br>                printf(“ “);<br>            for (int j = 1; j &lt;= i; j++)<br>            {<br>                printf(“</em>“);<br>            }<br>                printf(“%d\n”,i);<br>        }<br>        return 0;<br>    }*/</p>
+<p>##倒三角的反三角<br>    int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        for (int i = 1; i &lt;= num; i++)<br>        {<br>            for (int k = 1; k &lt; i; k++)<br>                printf(“ “);<br>            for (int j = i; j &lt;= num; j++)<br>                printf(“*”);<br>            printf(“\n”);<br>        }<br>        return 0;<br>    }</p>
+<p>##乘法口诀<br>    int main()<br>    {<br>        int num = 0;<br>        printf(“Please input a number:”);<br>        scanf(“%d”, &amp;num);<br>        if (num &lt; 10)<br>        {<br>            for (int i = 1; i &lt;= num; i++)<br>            {<br>                for (int j = 1; j &lt;= i; j++)<br>                {<br>                    printf(“%d<em>%d=%d “, j, j, j</em>j);<br>                }<br>                printf(“\n”);<br>            }<br>        }<br>        else<br>            printf(“对不起，不在乘法口诀的范围中！\n”);<br>        return 0;<br>    }</p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2017/02/21/hello-world/" class="next">下一篇 Hello World &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by John Doe using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net/u/Stiekel">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

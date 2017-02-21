@@ -1,150 +1,491 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Archives - Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-  <link href="/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
+
+
   
 
+
+
+
+
+
+<!doctype html>
+<html lang="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="John Doe">
+  
+  
+  
+  
+    <meta name="description" content="">
+  
+  <title>归档 [ Hexo ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
 </head>
 
 <body>
-  <div id="container">
-    <header id="header">
-  <div id="header-outer" class="outer">
-    <div id="header-inner" class="inner">
-      <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-      <a id="logo" class="logo" href="/"></a>
-      <nav id="main-nav">
+<div class="side-navigate hide-area">
+  
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg"/>
+          <div id="homelink">Hexo</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
         
-          <a class="main-nav-link" href="/categories">Categories</a>
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
         
-          <a class="main-nav-link" href="/tags">Tags</a>
+          
+            <li class="active">
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
         
-          <a class="main-nav-link" href="/about">About</a>
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
         
-          <a class="main-nav-link" href="/atom.xml">Rss</a>
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
         
-      </nav>
-      <nav id="sub-nav">
-        <div id="search-form-wrap">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-        </div>
-      </nav>
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
     </div>
   </div>
-</header>
-    <section id="main" class="outer">
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-        <a href="/2017/02/21/hello-world/" class="archive-article-date">
-  <time datetime="2017-02-21T04:51:26.964Z" itemprop="datePublished">Feb 21</time>
-</a>
-      
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/21/hello-world/">Hello World</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-        </div></section>
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
+  <div id="recent-posts">
+    <h1>归档
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+      <span class="posts-count">
+      共
+      5
       
-        <a href="/2015/02/21/第一篇文档/" class="archive-article-date">
-  <time datetime="2015-02-21T05:11:18.000Z" itemprop="datePublished">Feb 21</time>
-</a>
+        文章
       
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/21/第一篇文档/">第一篇文档</a>
+      </span>
+    
     </h1>
+    
+    
+      
+      
+        
+      
+      
+    
+      
+      
+      
+    
+      
+      
+        
+      
+      
+    
+      
+      
+      
+    
+      
+      
+        
+      
+      
+    
+    
+    
+      
+      
+        
+        <h3 class="archive-year-title">2017
+        
+          <span class="posts-count">
+          共
+          2
+          
+            文章
+          
+          </span>
+        
+        </h3>
+      
+      <div class="post-title-item">
   
-
-    </header>
+  <a href="/2017/02/21/2016.11.08/">
+  
+    #学习时遇到的问题：
+scanf(&quot;%d&quot;, &amp;row); 
+scanf(&quot;%d&quot;, &amp;colum...
+  
+  </a>
+  <p class="page-title-sub">
+    <span id = "post-title-date">2-21</span>
+    
+    
+    
+      <br>
+      
+      
+    
+  </p>
+  
+</div>
+    
+      
+      
+      <div class="post-title-item">
+  
+  <a href="/2017/02/21/hello-world/">
+  
+    Hello World
+  
+  </a>
+  <p class="page-title-sub">
+    <span id = "post-title-date">2-21</span>
+    
+    
+    
+      <br>
+      
+      
+    
+  </p>
+  
+</div>
+    
+      
+      
+        
+        <h3 class="archive-year-title">2015
+        
+          <span class="posts-count">
+          共
+          2
+          
+            文章
+          
+          </span>
+        
+        </h3>
+      
+      <div class="post-title-item">
+  
+  <a href="/2015/02/21/第一篇文档/">
+  
+    第一篇文档
+  
+  </a>
+  <p class="page-title-sub">
+    <span id = "post-title-date">2-21</span>
+    
+    
+    
+      <br>
+      
+      
+    
+  </p>
+  
+</div>
+    
+      
+      
+      <div class="post-title-item">
+  
+  <a href="/2015/02/21/Hello-UE4/">
+  
+    Hello UE4
+  
+  </a>
+  <p class="page-title-sub">
+    <span id = "post-title-date">2-21</span>
+    
+    
+    
+      <br>
+      
+      
+    
+  </p>
+  
+</div>
+    
+      
+      
+        
+        <h3 class="archive-year-title">2010
+        
+          <span class="posts-count">
+          共
+          1
+          
+            文章
+          
+          </span>
+        
+        </h3>
+      
+      <div class="post-title-item">
+  
+  <a href="/2010/02/21/一片文档/">
+  
+    CS1.6
+  
+  </a>
+  <p class="page-title-sub">
+    <span id = "post-title-date">2-21</span>
+    
+    
+    
+      <br>
+      
+      
+    
+  </p>
+  
+</div>
+    
   </div>
-</article>
-  
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-        <a href="/2015/02/21/Hello-UE4/" class="archive-article-date">
-  <time datetime="2015-02-21T05:09:46.000Z" itemprop="datePublished">Feb 21</time>
-</a>
-      
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/21/Hello-UE4/">Hello UE4</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    </div></section>
-  </section>
-    <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 John Doe&nbsp;
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+
+  </article>
+
+      
+      
+      
     </div>
   </div>
-</footer>
-    
 
-<script src="/js/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by John Doe using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
   </div>
+</div>
+
+</div>
+
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net/u/Stiekel">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com/SidCN">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
 </body>
 </html>
+
